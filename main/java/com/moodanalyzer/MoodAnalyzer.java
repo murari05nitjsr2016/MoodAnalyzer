@@ -16,6 +16,7 @@ public MoodAnalyzer()
         this.message = message;
         return analyseMood();
     }
+    // Handeling NullPointerException
     public String analyseMood()
     {
         try{
