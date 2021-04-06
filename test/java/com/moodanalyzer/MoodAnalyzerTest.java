@@ -6,46 +6,22 @@ import org.junit.jupiter.api.Test;
 public class MoodAnalyzerTest {
 
     @Test
-    public void givenSadMessageShouldReturnsSad()
+    public void givenNullMoodShouldThrowMoodAnalysisException()
     {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        String mood = moodAnalyzer.analyseMood("I am in sad Mood");
+        String mood = moodAnalyzer.analyseMood(null);
         System.out.println(mood);
-        Assertions.assertEquals("SAD",mood);
+        Assertions.assertEquals("HAPPY",mood);
+
     }
-
-
     @Test
-    public void givenHappyMessageShouldReturnsHappy()
+    public void givenEmptyMoodShouldThrowMoodAnalysisException()
     {
         MoodAnalyzer moodAnalyzer = new MoodAnalyzer();
-        String mood = moodAnalyzer.analyseMood("I am in Happy Mood");
+        String mood = moodAnalyzer.analyseMood("");
         System.out.println(mood);
         Assertions.assertEquals("HAPPY",mood);
-    }
 
-    @Test
-    public void givenConstructorSadMessageShouldReturnsSad()
-    {
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in sad Mood");
-        String mood = moodAnalyzer.analyseMood();
-        System.out.println(mood);
-        Assertions.assertEquals("SAD",mood);
-    }
-    @Test
-    public void givenConstructorHappyMessageShouldReturnsHappy()
-    {
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer("I am in happy Mood");
-        String mood = moodAnalyzer.analyseMood();
-        System.out.println(mood);
-        Assertions.assertEquals("HAPPY",mood);
-    }
-    @Test
-    public void givenNullMoodShouldReturnHappy()
-    {
-        MoodAnalyzer moodAnalyzer = new MoodAnalyzer(null);
-        String mood = moodAnalyzer.analyseMood();
-        Assertions.assertEquals("HAPPY",mood);
     }
 
 }
