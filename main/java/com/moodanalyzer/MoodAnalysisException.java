@@ -1,6 +1,6 @@
 package com.moodanalyzer;
 
-public class MoodAnalysisException extends RuntimeException {
+public class MoodAnalysisException extends Exception {
   public MoodAnalysisException(String msg)
   {
       super(msg);

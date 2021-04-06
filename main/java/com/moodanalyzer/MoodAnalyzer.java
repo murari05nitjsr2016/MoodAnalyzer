@@ -15,19 +15,22 @@ public class MoodAnalyzer {
 
 
     // Handeling NullPointerException
-    public String analyseMood(String message) {
+    public String analyseMood(String message)  {
         try {
             this.message = message;
             if (message == null || message.isEmpty())
             {
                 throw new MoodAnalysisException();
             }
+            if(message.contains("sad"))
+                return "SAD";
+            else
+                return "HAPPY";
 
         } catch (MoodAnalysisException e) {
             return "HAPPY";
 
         }
 
-        return null;
     }
 }
